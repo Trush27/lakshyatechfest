@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFest</title>
+    <style>
+        * {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin: auto;
+  text-align: center;
+  background-color: #ffffff;
+  width: 80%;
+  padding: 30px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #5f5f5f;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #5f5f5f;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #5f5f5f;
+}
+
+form select {
+  height: 40px;
+}
+
+form button {
+  background-color: #7952b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #6a3ab3;
+}
+
+form button:active {
+  opacity: 0.7;
+}
+
+form button.bootd {
+  background-color: #ffffff;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button.bootd:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+form button.bootd:active {
+  opacity: 0.7;
+}
+
+.bootstrap{
+  background-color: rgb(121, 82,179);
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  width: 120px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition:opacity 0.15s,color 0.15s,background-color 0.15s;
+}
+
+.bootstrap:hover{
+  background-color: #512b9c;
+}
+
+.bootstrap:active{
+  opacity: 0.7;
+}
+
+.bootd{
+  background-color: white;
+  color: rgb(108,117,125);
+  border-radius: 4px;
+  height: 35px;
+  width: 120px;
+  border-width: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  transition:opacity 0.15s,color 0.15s,background-color 0.15s;
+}
+
+.bootd:hover{
+  background-color: #6c757d;
+  color: white;
+}
+
+.bootd:active{
+  opacity: 0.7;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <h1>TechFest Registration</h1>
+    <br>
+    <br>
+    Name : <input type="text" name="Name" placeholder="Enter your name here">
+    <br>
+    <br>
+    Phone no : <input type="text" name="Phone">
+    <br>
+    <br>
+    Email : <input type="email" name="Email">
+    <br>
+    <br>
+    College Name :
+    <input type="text" name="clg_name">
+    <br>
+    <br>
+    Events : 
+    <select name="" id="">
+        <option value="0">Select any of the given events</option>
+        <option value="Debug IT">DEBUG IT</option>
+        <option value="Crack it up">Crack it up</option>
+        <option value="Insight coding">Insight Coding</option>
+        <option value="Web-o-thon">Web-o-thon</option>
+        <option value="IT Quiz">IT Quiz</option>
+    </select>
+    <br>
+    <br>
+    <button class="bootd">Reset</button>  <button class="bootstrap">Submit</button>
+    
+    <br>
+    <br>
+    <div id="demo"></div>
+    </div>
+    </body>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("may 5, 2023 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+</script>
